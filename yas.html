@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Meu Amor!</title>
+    <style>
+        body {
+            background-color: #fff0f3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 75, 110, 0.2);
+            max-width: 500px;
+            z-index: 1;
+        }
+
+        h1 { color: #ff4b6e; font-size: 2.5rem; }
+        p { color: #555; line-height: 1.6; font-size: 1.1rem; }
+
+        .btn-video {
+            background-color: #ff4b6e;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .btn-video:hover {
+            background-color: #ff1f4b;
+            transform: scale(1.05);
+        }
+
+        #video-container {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            border-radius: 10px;
+            border: 5px solid #ff4b6e;
+        }
+
+        /* Corações flutuantes */
+        .heart {
+            position: absolute;
+            color: #ff4b6e;
+            font-size: 20px;
+            animation: float 5s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Parabéns Mimin! ❤️</h1>
+        <p>Hoje o dia é todo seu, mas o presente é meu por ter você ao meu lado. </p>
+        <p>Que esse seu novo ciclo seja muito abençoado e cheio de conquistas, igual você conquistou meu coração desde a primeira vez que eu te vi.</p>
+        <p>Você é a pessoa mais incrível que eu conheço, EU TE AMO.</p>
+        
+        <button class="btn-video" onclick="mostrarVideo()"> Clica aqui mor</button>
+
+        <div id="video-container">
+    <video controls width="100%" style="border-radius: 15px; border: 5px solid #ff4b6e;">
+        <source src="yasmin.mp4" type="video/mp4">
+    </video>
+</div>
+    </div>
+
+    <script>
+        function mostrarVideo() {
+            document.getElementById('video-container').style.display = 'block';
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        // Gerador de corações decorativos
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
